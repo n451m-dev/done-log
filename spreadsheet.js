@@ -43,8 +43,6 @@ export async function pushTodoInSpreadsheet(todoData) {
     }
   } catch (error) {
     console.error(error)
-    
-    throw error;
   }
 }
 

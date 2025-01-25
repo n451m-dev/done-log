@@ -1,7 +1,9 @@
 import { pushTodoInSpreadsheet } from './spreadsheet.js';
 
 
-// greeting
+/**
+ * Displays a personalized greeting message based on the current time and user input.
+ */
 (function showGreeting() {
     function getGreetings(currentHours) {
         if (currentHours <= 12) {
@@ -29,26 +31,37 @@ import { pushTodoInSpreadsheet } from './spreadsheet.js';
     document.querySelector('.date').innerHTML = new Date().toDateString();
 })();
 
+/**
+ * Fetches and displays a random inspirational quote.
+ */
 (async function showQuote() {
-        let response = await fetch("https://nasim-coder.github.io/staticjsondata/quote.json");
+    try {
+        let response = await fetch("https://n451m-dev.github.io/staticjsondata/quote.json");
         let data = await response.json();
         let arrlength = data.length;
         let rnum = Math.floor(Math.random() * arrlength);
         document.querySelector('.quote').innerText = data[rnum].text;
         document.querySelector('.author').innerText = "-" + data[rnum].author;
+    } catch (err) {
+        document.querySelector('.quote').innerText = "Inspiration is unavailable.";
+        document.querySelector('.author').innerText = "- Unknown";
+    }
+        
 })();
 
-// to do creation logic
+// DOM elements
 let createTodoButton = document.querySelector(".btn");
 let todoInput = document.querySelector(".input");
 let todoContainer = document.querySelector('.todos-container');
 let startInput = document.querySelector('.start-time');
 let endInput = document.querySelector('.end-time');
 
-//crete todo manually by entering the details
+/**
+ * Handles the creation of new to-do items when the add button is clicked.
+ */
 createTodoButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (!todoInput.value || todoInput.value.trim().length<1) return showToast('Please Enter task to do');
+        event.preventDefault();
+        if (!todoInput.value || todoInput.value.trim().length<1) return showToast('Please Enter task to do');
         let divele = document.createElement('div')
         let todoElement = document.createElement('span');
         todoElement.innerText = todoInput.value;
@@ -89,14 +102,19 @@ createTodoButton.addEventListener('click', function (event) {
     
 });
 
-// insert todos in local storage
+/**
+ * Saves a new to -do in local storage.
+ */
 function setTodos(todo, isDone, startTime, endTime, createdAt, todoId ) {
     let todos = getTodos();
     todos.push({todoId: todoId, todo:todo, isDone:isDone, startTime:startTime,endTime:endTime, createdAt:createdAt});
     localStorage.setItem("mytodos", JSON.stringify(todos));
 }
 
-// get todos from local storage
+/**
+ * Retrieves to-dos from local storage.
+ * @returns {Array} Array of to-do objects
+ */
 function getTodos() {
     let todos;
     if (localStorage.getItem("mytodos") === null) {
@@ -155,15 +173,19 @@ function createTodoElements(todo, compClass, startTime, endTime, todoId) {
 }
 
 window.addEventListener('load', createTodoOnLoad);
-
+/**
+ * Deletes a to-do item from the DOM and local storage.
+ */
 function deleteTodo(event){
-const deleteBtn = event.currentTarget;
-const parent = deleteBtn.parentElement;
-const mytodo = parent.querySelector('.mytodo')
-deleteOneTodoFromLocalStorage(mytodo.innerText);
-parent.remove();
+    const parent = event.currentTarget.parentElement;
+    const todoId = parent.id;
+    console.log("todoId", todoId);
+    deleteOneTodoFromLocalStorageById(todoId);
+    parent.remove();
 }
-
+/**
+ * Marks a to-do as completed.
+ */
 function markAsDone(event){
 const doneBtn = event.currentTarget;
 const parent = doneBtn.parentElement;
@@ -178,13 +200,9 @@ let todos = getTodos();
         parent.classList.add('completed');
 }
 
-function deleteOneTodoFromLocalStorage(todo) {
+function deleteOneTodoFromLocalStorageById(todoId) {
     let todos = getTodos();
-    todos.forEach((elem, ind) => {
-        if (elem.todo == todo) {
-            todos.splice(ind, 1);
-        }
-    });
+    todos = todos.filter(todo => todo.todoId != todoId);
     localStorage.setItem("mytodos", JSON.stringify(todos));
 }
 
@@ -207,7 +225,7 @@ async function deleteAlreadyDoneTodo(){
       todos.forEach(elem => {
         if (elem.isDone == true) {
           myTaskArr.push([elem.todo, elem.createdAt,elem.doneAt, elem.startTime, elem.endTime, elem.isDone]);
-          deleteOneTodoFromLocalStorage(elem.todo);
+          deleteOneTodoFromLocalStorageById(elem.todoId);
           }
       });
      if(myTaskArr.length>0) await pushTodoInSpreadsheet(myTaskArr);
@@ -227,6 +245,9 @@ async function clearTodos(event){
     await deleteAlreadyDoneTodo();
 }
 
+/**
+ * Shows a toast notification with the provided message.
+ */
 function showToast(message) {
     const toast = document.querySelector('.toast');
     toast.textContent = message;

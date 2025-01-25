@@ -4,6 +4,8 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: #353c30;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease-in-out;
 }
 
 hr {
@@ -50,6 +52,7 @@ hr {
     justify-content: space-around;
     align-items: center;
     transition: all 0.5s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .done,
@@ -215,10 +218,9 @@ background-color: #000000;
     border-radius: 5px;
     transition: opacity 0.5s ease-in;
     transition: display 0.5s ease-in;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   }
-  
+
   .hidden {
     display: none;
   }
-
-  

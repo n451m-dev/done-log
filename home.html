@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoneLog - Push Todos to Your Google Sheets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #353c30;
+        }
+
+        header {
+            background-color: #181818;
+            color: #656b70;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        nav a {
+            color: #656b70;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            /* text-align: center; */
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .donelog {
+            height: 75vh;
+        }
+
+        #terms,
+        #privacy, #donelog {
+            scroll-margin-top: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="icons/icon128.png" alt="DoneLog Logo">
+        </div>
+        <nav>
+            <a href="#donelog">DoneLog</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="mailto:support@donelog.com">Contact</a>
+        </nav>
+    </header>
+    <div class="donelog" id="donelog">
+        <div class="container">
+            <h1>Welcome to DoneLog</h1>
+            <p>DoneLog is a Chrome extension that helps you stay productive by managing your daily tasks efficiently.
+            </p>
+            <p>Features include:</p>
+            <ul>
+                <li>Motivational quotes displayed in the top bar.</li>
+                <li>Personalized greetings based on your local time.</li>
+                <li>Task management with start and end times.</li>
+                <li>Automatic tracking of completed tasks to Google Sheets.</li>
+                <li>Seamless deletion of completed tasks every day.</li>
+            </ul>
+            <p>Start using DoneLog today and boost your productivity effortlessly!</p>
+        </div>
+    </div>
+    <div class="terms" id="terms">
+        <div class="container">
+            <h1>Terms of Service (ToS)</h1>
+            <strong>Last Updated:</strong> <span>25 January, 2025.</span>
+
+            <p>Welcome to DoneLog! By installing or using the DoneLog Chrome extension, you agree to be bound by these
+                Terms of
+                Service. Please read them carefully.</p>
+
+            <h3>1. Acceptance of Terms</h3>
+            <p>By using the DoneLog extension, you acknowledge and agree to these terms. If you do not agree, please do
+                not use the
+                extension.</p>
+
+            <h3>2. Description of Service</h3>
+            <p>DoneLog allows users to create, manage, and store their to-do tasks by pushing them to Google Sheets. The
+                extension
+                provides a simple interface to manage tasks efficiently.</p>
+
+            <h3>3. User Responsibilities</h3>
+            <p>I. You are responsible for the accuracy of the data you enter.</p>
+            <p>II. You must comply with applicable laws and regulations while using the extension.</p>
+            <p>II. You may not use the extension for illegal or unauthorized purposes.</p>
+            <h3>4. Privacy</h3>
+            <p>Your privacy is important to us. Please refer to our <a href="#">Privacy Policy</a> for information on
+                how your data is collected and
+                used.</p>
+
+            <h3>5. Limitations of Liability</h3>
+            <p>DoneLog is provided "as-is" without any warranties. We are not responsible for any data loss, damages, or
+                issues arising
+                from the use of the extension.</p>
+
+            <h3>6. Modifications to the Service</h3>
+            <p>We reserve the right to modify or discontinue the extension at any time without prior notice.</p>
+
+            <h3>7. Termination</h3>
+            <p>We may suspend or terminate your access to the extension if you violate these terms.</p>
+
+            <h3>8. Contact Us</h3>
+            <p>If you have any questions about these terms, please contact us at [your email].</p>
+
+        </div>
+    </div>
+
+    <div class="privacy" id="privacy">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <strong>Last Updated:</strong> <span>25 January, 2025</span>
+
+            <p>Your privacy is important to us. This Privacy Policy explains how DoneLog collects, uses, and protects
+                your information
+                when you use our Chrome extension.</p>
+
+            <h3>1. Information We Collect</h3>
+            <p>DoneLog does not collect any personal data from users. However, we may store the following locally in
+                your browser:</p>
+            <li>To-do task details (entered by you).</li>
+            <li>Timestamps related to task management.</li>
+            <h3>2. How We Use Your Information</h3>
+            <p>Your data is only used locally to provide the to-do tracking functionality.</p>
+            <p>If you choose to push tasks to Google Sheets, the extension will store tasks within your own Google
+                account.
+            </p>
+            <h3>3. Data Storage</h3>
+            <p>All to-do data is stored locally in your browser's local storage and, optionally, in your Google Sheet if
+                you connect
+                your account. We do not store or have access to your data on our servers.</p>
+
+            <h3>4. Third-Party Services</h3>
+            <p>We use Google APIs to push your to-do tasks to your Google Sheet. Google's privacy policies apply when
+                you authenticate
+                and use this feature.</p>
+
+            <h3>5. Your Choices and Controls</h3>
+            <p>You can clear your stored tasks at any time through the extension interface. You can also revoke Google
+                account access
+                through your Google security settings.</p>
+
+            <h3>6. Security Measures</h3>
+            <p>We take reasonable steps to secure your data stored locally. However, you are responsible for keeping
+                your Google account secure when using the extension.</p>
+
+            <h3>7. Changes to this Privacy Policy</h3>
+            <p>We may update this policy from time to time. Any significant changes will be communicated through the
+                extension update
+                or via our support channels.</p>
+
+            <h3>8. Contact Us</h3>
+            <p>If you have any questions or concerns about this Privacy Policy, please contact us at [your email].
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

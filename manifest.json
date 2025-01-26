@@ -1,5 +1,5 @@
 {
-    "name": "DoneLog -Push todos in your google sheet",
+    "name": "DoneLog",
     "description": "Seamlessly manage tasks, sync with Google Sheets, get inspired with motivational quotes. Click or Ctrl+Shift+L for instant access",
     "version": "0.0.1",
     "manifest_version": 3,

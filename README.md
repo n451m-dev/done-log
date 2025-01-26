@@ -12,6 +12,6 @@ It is a To-do chrome app (extension).
 
 5. Next day when you open Chrome your done tasks will be deleted automatically and pushed to your google sheet, you can start writitng tasks for the day.  
 
-6. When It is deleting the done tasks, it captures the task, start time, end time, actual done time and the date it was created and push it into Google Spread sheet if you authenticate with your google account, you no longer need to write your daily tasks journal, it will store these details in your spreadsheet.    
+6. When It is deleting the done tasks, it captures the task, start time, end time, actual done time and the date it was created and push it into Google Spread sheet if you authenticate with your google account.    
 
 ![Screenshot from 2023-03-07 13-56-06](https://user-images.githubusercontent.com/40820072/223367353-e58a0b3c-0975-4641-91c8-0ee5edf9dd12.png)

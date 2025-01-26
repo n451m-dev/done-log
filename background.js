@@ -6,7 +6,7 @@ chrome.action.onClicked.addListener(function() {
 function createContextMenuItem() {
     chrome.contextMenus.create({
       id: 'openDoneLog',
-      title: 'DoneLog',
+      title: 'DoneLog (Ctrl+Shift+L)',
       contexts: ['page'] 
     });
   }

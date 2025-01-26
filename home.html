@@ -59,21 +59,33 @@
 
         h1 {
             color: #2c3e50;
+            text-align: center;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
+        p, li {
+            font-size: 1rem;
+            line-height: 1.3;
             color: #555;
         }
 
         .donelog {
-            height: 75vh;
+            height: 110vh;
+            margin-bottom: 5rem;
         }
 
         #terms,
-        #privacy, #donelog {
+        #privacy,
+        #donelog {
             scroll-margin-top: 130px;
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -87,7 +99,7 @@
             <a href="#donelog">DoneLog</a>
             <a href="#terms">Terms of Service</a>
             <a href="#privacy">Privacy Policy</a>
-            <a href="mailto:support@donelog.com">Contact</a>
+            <a href="mailto:khannasimahmad@gmail.com.com">Contact</a>
         </nav>
     </header>
     <div class="donelog" id="donelog">
@@ -95,15 +107,18 @@
             <h1>Welcome to DoneLog</h1>
             <p>DoneLog is a Chrome extension that helps you stay productive by managing your daily tasks efficiently.
             </p>
-            <p>Features include:</p>
+            <p><strong>Features include:</strong></p>
             <ul>
                 <li>Motivational quotes displayed in the top bar.</li>
                 <li>Personalized greetings based on your local time.</li>
                 <li>Task management with start and end times.</li>
-                <li>Automatic tracking of completed tasks to Google Sheets.</li>
+                <li>Automatically push completed tasks to your Google Sheets.</li>
                 <li>Seamless deletion of completed tasks every day.</li>
             </ul>
             <p>Start using DoneLog today and boost your productivity effortlessly!</p>
+            <div>
+                <img src="./public/DoneLog-Screenshot.png" alt="DoneLog screenshot">
+            </div>
         </div>
     </div>
     <div class="terms" id="terms">
@@ -130,7 +145,7 @@
             <p>II. You must comply with applicable laws and regulations while using the extension.</p>
             <p>II. You may not use the extension for illegal or unauthorized purposes.</p>
             <h3>4. Privacy</h3>
-            <p>Your privacy is important to us. Please refer to our <a href="#">Privacy Policy</a> for information on
+            <p>Your privacy is important to us. Please refer to our <a href="#privacy">Privacy Policy</a> for information on
                 how your data is collected and
                 used.</p>
 
@@ -146,7 +161,7 @@
             <p>We may suspend or terminate your access to the extension if you violate these terms.</p>
 
             <h3>8. Contact Us</h3>
-            <p>If you have any questions about these terms, please contact us at [your email].</p>
+            <p>If you have any questions about these terms, please contact us at khannasimahmad@gmaail.com.</p>
 
         </div>
     </div>
@@ -187,7 +202,7 @@
 
             <h3>6. Security Measures</h3>
             <p>We take reasonable steps to secure your data stored locally. However, you are responsible for keeping
-                your Google account secure when using the extension.</p>
+                your Google account and data secure when using the extension.</p>
 
             <h3>7. Changes to this Privacy Policy</h3>
             <p>We may update this policy from time to time. Any significant changes will be communicated through the
@@ -195,7 +210,7 @@
                 or via our support channels.</p>
 
             <h3>8. Contact Us</h3>
-            <p>If you have any questions or concerns about this Privacy Policy, please contact us at [your email].
+            <p>If you have any questions or concerns about this Privacy Policy, please contact us at khannasimahmad@gmaail.com.
             </p>
         </div>
     </div>

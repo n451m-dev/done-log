@@ -1,5 +1,6 @@
 # DoneLog
-It is a To-do chrome app (extension).  
+A To-do chrome app (extension).
+https://chromewebstore.google.com/detail/donelog/malfmfbbpplmgobpbjhfdkhpmnjgledl?utm_source=ext_app_menu
 # Features :  
 
 1. It Shows motivational quotes on the topbar.
